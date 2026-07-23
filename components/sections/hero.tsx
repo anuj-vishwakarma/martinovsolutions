@@ -2,7 +2,7 @@
 
 import { useRef, useEffect, useState } from 'react';
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion';
-import { ArrowRight, Phone, MessageCircle, ShieldCheck, Wrench, Award, Factory } from 'lucide-react';
+import { ArrowRight, Phone, MessageCircle, ShieldCheck, Wrench } from 'lucide-react';
 import { buildWhatsAppUrl, buildTelUrl } from '@/lib/whatsapp';
 
 const guides = [
@@ -16,10 +16,8 @@ const guides = [
 ];
 
 const stats = [
-  { value: '46724', label: 'Licensed', suffix: '#', icon: <ShieldCheck className="h-4 w-4" /> },
-  { value: '100', label: 'Cochran Rd Facility', suffix: '', icon: <Factory className="h-4 w-4" /> },
-  { value: '26', label: 'Service Areas', suffix: '+', icon: <Wrench className="h-4 w-4" /> },
-  { value: '7', label: 'Days Emergency', suffix: '/7', icon: <Award className="h-4 w-4" /> },
+  { value: '46724', label: 'License #', icon: <ShieldCheck className="h-4 w-4" /> },
+  { value: '26', label: 'Service Areas', icon: <Wrench className="h-4 w-4" /> },
 ];
 
 export function Hero() {
@@ -143,8 +141,8 @@ export function Hero() {
               className="mt-8 max-w-xl text-base leading-relaxed text-ink-300 sm:text-lg"
             >
               Installation, repair & maintenance in Cuyahoga Falls, OH and the
-              surrounding areas — engineered by master craftsmen, backed by
-              in-house duct fabrication and a higher level of quality.
+              surrounding areas. Master craftsmen build a full range of
+              HVAC applications in the company's own shop.
             </motion.p>
 
             {/* CTAs */}
@@ -221,15 +219,13 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.2 }}
-          className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-ink-800 bg-ink-800/60 sm:grid-cols-4"
+          className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-ink-800 bg-ink-800/60"
         >
           {stats.map((s) => (
             <div key={s.label} className="group relative bg-ink-950/80 p-5 transition hover:bg-ink-900/80">
               <div className="mb-2 text-[hsl(var(--accent-electric))]">{s.icon}</div>
               <div className="font-display text-2xl font-bold text-ink-50">
-                {s.suffix === '#' && '#'}
                 {s.value}
-                {s.suffix !== '#' && s.suffix}
               </div>
               <div className="mt-1 text-xs text-ink-400">{s.label}</div>
               <div className="absolute inset-x-0 bottom-0 h-px origin-left scale-x-0 bg-gradient-to-r from-[hsl(var(--accent-electric))] to-transparent transition-transform duration-500 group-hover:scale-x-100" />

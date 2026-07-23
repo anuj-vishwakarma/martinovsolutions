@@ -67,8 +67,8 @@ export function ContactFooter() {
               </div>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-ink-400">
-              Master craftsmen building precision HVAC, duct systems, and sheet
-              metal fabrication in Cuyahoga Falls, OH.
+              We provide installation, repair & maintenance in Cuyahoga Falls, OH
+              and the surrounding areas.
             </p>
             <p className="mt-4 text-xs text-ink-500">{COMPANY.license}</p>
           </div>

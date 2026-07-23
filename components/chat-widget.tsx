@@ -31,23 +31,23 @@ type Message = {
 
 const botResponses: Record<WhatsAppIntent, string> = {
   'new-system':
-    "Great choice! Our master craftsmen will design and install a precision HVAC system tailored to your home. I'll open WhatsApp so you can share your details and get an Instant Estimate.",
+    "We provide installation in Cuyahoga Falls, OH and the surrounding areas. I'll open WhatsApp so you can get an Instant Estimate for a new system.",
   repair:
-    "We can get your system running again. Our certified technicians service all major brands. Let me connect you to our team on WhatsApp to schedule a repair visit.",
+    "We provide repair service in Cuyahoga Falls, OH and the surrounding areas. Let me connect you to our team on WhatsApp to schedule a repair.",
   replace:
-    "Thinking about an upgrade? We'll assess your current system and recommend the most efficient replacement. Opening WhatsApp now so our team can help.",
+    "We can help with replacing your system. Opening WhatsApp now so our team can assist you.",
   'energy-bill':
-    "High energy bills often mean your system is working harder than it should. We can audit your setup and recommend efficiency improvements. Let's connect you on WhatsApp.",
+    "We can help with energy bill concerns. Let me connect you to our team on WhatsApp.",
   'healthier-home':
-    "A healthier home starts with better air quality and proper ventilation. We offer indoor air quality solutions and duct system optimization. Opening WhatsApp to learn more about your needs.",
+    "We offer solutions for a healthier home. Opening WhatsApp to learn more about your needs.",
   maintenance:
-    "Regular maintenance keeps your system efficient and extends its life. Let me open WhatsApp so you can book a maintenance visit at a time that works for you.",
+    "We provide maintenance in Cuyahoga Falls, OH and the surrounding areas. Let me open WhatsApp so you can schedule a maintenance visit.",
   'product-knowledge':
-    "We carry top manufacturer products and can guide you through the options. I'll connect you to our team on WhatsApp for detailed product information.",
+    "We can help with product knowledge. I'll connect you to our team on WhatsApp for more information.",
   emergency:
-    "We offer Emergency Services and can respond quickly. Opening WhatsApp now — please describe the emergency so our team can prioritize your call.",
+    "Emergency Services Available. Opening WhatsApp now — please describe the emergency so our team can assist.",
   financing:
-    "We offer financing with approved credit so you can invest in comfort without the upfront cost. Let me connect you on WhatsApp to discuss options.",
+    "We offer financing with approved credit. Let me connect you on WhatsApp to discuss options.",
   general:
     "I'd be happy to help! Let me connect you to our team on WhatsApp so we can assist you directly.",
 };

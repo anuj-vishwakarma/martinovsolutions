@@ -1,14 +1,13 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ShieldCheck, Award, Factory, Wrench, FileBadge } from 'lucide-react';
+import { ShieldCheck, Award, Factory, Wrench } from 'lucide-react';
 
 const trustItems = [
-  { icon: <ShieldCheck className="h-6 w-6" />, label: 'License #46724', sub: 'State Certified' },
-  { icon: <Award className="h-6 w-6" />, label: 'Master Craftsmen', sub: 'In-house Fabrication' },
-  { icon: <Factory className="h-6 w-6" />, label: 'Sheet Metal Shop', sub: 'Full Range HVAC Applications' },
-  { icon: <FileBadge className="h-6 w-6" />, label: 'Manufacturer Partners', sub: 'Top Product Lines' },
-  { icon: <Wrench className="h-6 w-6" />, label: 'Emergency Services', sub: 'Available 7 Days' },
+  { icon: <ShieldCheck className="h-6 w-6" />, label: 'License #46724', sub: 'Licensed & Certified' },
+  { icon: <Award className="h-6 w-6" />, label: 'Master Craftsmen', sub: 'In-House Fabrication' },
+  { icon: <Factory className="h-6 w-6" />, label: 'Sheet Metal Fabrication', sub: 'Full Range HVAC Applications' },
+  { icon: <Wrench className="h-6 w-6" />, label: 'Emergency Services', sub: 'Available' },
 ];
 
 export function TrustBar() {

@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { ArrowRight, ChevronRight, Wind, Gauge, Cog, Boxes, Layers } from 'lucide-react';
+import { ArrowRight, ChevronRight, Wind, Layers } from 'lucide-react';
 import { buildWhatsAppUrl } from '@/lib/whatsapp';
 
 const steps = [
@@ -10,25 +10,13 @@ const steps = [
     n: '01',
     icon: <Layers className="h-6 w-6" />,
     title: 'Sheet Metal Fabrication',
-    desc: 'Master craftsmen build a full range of HVAC applications in the company\'s own shop — ensuring a higher level of quality and faster installation.',
+    desc: 'Master craftsmen build a full range of HVAC applications in the company\'s own shop.',
   },
   {
     n: '02',
     icon: <Wind className="h-6 w-6" />,
     title: 'Duct Systems',
-    desc: 'In-house fabrication means precise, custom-fit ductwork engineered for optimal airflow and efficiency in your home.',
-  },
-  {
-    n: '03',
-    icon: <Gauge className="h-6 w-6" />,
-    title: 'Precision Measurement',
-    desc: 'Every component is measured and fabricated to exact specifications — no generic off-the-shelf parts, just engineered solutions.',
-  },
-  {
-    n: '04',
-    icon: <Cog className="h-6 w-6" />,
-    title: 'Expert Installation',
-    desc: 'Our certified technicians install with craftsmanship honed across 26+ service areas in Northeast Ohio.',
+    desc: 'In-house fabrication ensures a higher level of quality and faster installation.',
   },
 ];
 

@@ -8,6 +8,7 @@ import { Process } from '@/components/sections/process';
 import { Services } from '@/components/sections/services';
 import { Products } from '@/components/sections/products';
 import { Reviews } from '@/components/sections/reviews';
+import { Videos } from '@/components/sections/videos';
 import { Financing } from '@/components/sections/financing';
 import { ContactFooter } from '@/components/sections/contact-footer';
 import { ChatWidget } from '@/components/chat-widget';
@@ -23,6 +24,7 @@ export default function Home() {
       <Services />
       <Products />
       <Reviews />
+      <Videos />
       <Financing />
       <ContactFooter />
       <ChatWidget />

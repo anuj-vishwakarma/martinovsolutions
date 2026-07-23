@@ -5,10 +5,10 @@ import { Factory, Wrench, Users, MapPin } from 'lucide-react';
 import { buildWhatsAppUrl } from '@/lib/whatsapp';
 
 const highlights = [
-  { icon: <Factory className="h-5 w-5" />, label: 'In-House Sheet Metal Shop', desc: 'Full range of HVAC applications fabricated on-site' },
-  { icon: <Wrench className="h-5 w-5" />, label: 'Master Craftsmen', desc: 'Higher level of quality and faster installation' },
-  { icon: <Users className="h-5 w-5" />, label: 'Certified Technicians', desc: 'Installation, repair & maintenance experts' },
-  { icon: <MapPin className="h-5 w-5" />, label: '26+ Service Areas', desc: 'Across Cuyahoga Falls and surrounding communities' },
+  { icon: <Factory className="h-5 w-5" />, label: 'Sheet Metal Fabrication', desc: 'Full range of HVAC applications in the company\'s own shop' },
+  { icon: <Wrench className="h-5 w-5" />, label: 'Duct Systems', desc: 'In-house fabrication ensures a higher level of quality and faster installation' },
+  { icon: <Users className="h-5 w-5" />, label: 'Installation, Repair & Maintenance', desc: 'In Cuyahoga Falls, OH and the surrounding areas' },
+  { icon: <MapPin className="h-5 w-5" />, label: '100 Cochran Rd', desc: 'Cuyahoga Falls, OH 44223' },
 ];
 
 export function About() {
@@ -97,7 +97,7 @@ export function About() {
             >
               Master Craftsmen.
               <br />
-              <span className="text-gradient-electric">Built In-House.</span>
+              <span className="text-gradient-electric">In-House Fabrication.</span>
             </motion.h2>
             <motion.p
               initial={{ opacity: 0 }}
@@ -106,9 +106,10 @@ export function About() {
               className="mt-6 max-w-md text-base leading-relaxed text-ink-400"
             >
               Martinov Home Solutions provides installation, repair, and maintenance
-              in Cuyahoga Falls, OH and the surrounding areas. Our master craftsmen
-              build a full range of HVAC applications in the company's own shop —
-              ensuring a higher level of quality and faster installation.
+              in Cuyahoga Falls, OH and the surrounding areas. Master craftsmen
+              build a full range of HVAC applications in the company's own shop.
+              In-house fabrication ensures a higher level of quality and faster
+              installation.
             </motion.p>
 
             {/* Highlights */}

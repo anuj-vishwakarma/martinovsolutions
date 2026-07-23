@@ -1,23 +1,39 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Star, Quote } from 'lucide-react';
+import { Star, ShieldCheck, Factory, Wrench, Clock, MapPin } from 'lucide-react';
+import { buildWhatsAppUrl } from '@/lib/whatsapp';
 
-const reviews = [
+const trustSignals = [
   {
-    name: 'Homeowner · Cuyahoga Falls',
-    text: 'Martinov fabricated and installed custom ductwork in our home. The quality and attention to detail was unlike anything we\'d seen from other HVAC companies. Truly master craftsmen.',
-    area: 'Cuyahoga Falls',
+    icon: <ShieldCheck className="h-6 w-6" />,
+    title: 'License #46724',
+    desc: 'Licensed HVAC professionals serving Cuyahoga Falls and surrounding areas.',
   },
   {
-    name: 'Homeowner · Stow',
-    text: 'Called for an emergency repair on a weekend and they responded quickly. Professional, knowledgeable, and fair pricing. We\'ve used them for maintenance ever since.',
-    area: 'Stow',
+    icon: <Factory className="h-6 w-6" />,
+    title: 'In-House Sheet Metal Shop',
+    desc: "Master craftsmen build a full range of HVAC applications in the company's own shop.",
   },
   {
-    name: 'Homeowner · Hudson',
-    text: 'The in-house sheet metal fabrication made all the difference. Our new system was installed faster and fits perfectly. Highly recommend Martinov Home Solutions.',
-    area: 'Hudson',
+    icon: <Wrench className="h-6 w-6" />,
+    title: 'Duct Systems',
+    desc: 'In-house fabrication ensures a higher level of quality and faster installation.',
+  },
+  {
+    icon: <Clock className="h-6 w-6" />,
+    title: 'Emergency Services Available',
+    desc: 'Mon - Fri: 7:00am - 5:00pm · Sat: 8:00am - 12:00pm · Emergency services available.',
+  },
+  {
+    icon: <MapPin className="h-6 w-6" />,
+    title: '26 Service Areas',
+    desc: 'Akron, Aurora, Bath, Brecksville, Brunswick, Canton, Cuyahoga Falls, Hudson, Kent, Medina, Stow, Twinsburg, Wadsworth and more.',
+  },
+  {
+    icon: <Star className="h-6 w-6" />,
+    title: 'Financing with Approved Credit',
+    desc: 'Cash, Check, Financing with approved credit, and Credit Cards accepted.',
   },
 ];
 
@@ -34,7 +50,7 @@ export function Reviews() {
             viewport={{ once: true }}
             className="mb-4 inline-block text-xs uppercase tracking-[0.3em] text-[hsl(var(--accent-electric))]"
           >
-            Customer Reviews
+            Why Choose Martinov
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
@@ -48,35 +64,42 @@ export function Reviews() {
           </motion.h2>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-3">
-          {reviews.map((r, i) => (
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {trustSignals.map((item, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.15 }}
-              className="group relative flex flex-col rounded-2xl border border-ink-800 bg-ink-900/40 p-8 transition hover:border-ink-700 hover:bg-ink-900/60"
+              transition={{ delay: (i % 3) * 0.1 }}
+              className="group relative flex flex-col rounded-2xl border border-ink-800 bg-ink-900/40 p-6 transition hover:border-ink-700 hover:bg-ink-900/60"
             >
-              <Quote className="mb-4 h-8 w-8 text-ink-700" />
-              <div className="mb-4 flex gap-1">
-                {[...Array(5)].map((_, j) => (
-                  <Star key={j} className="h-4 w-4 fill-[hsl(var(--accent-electric))] text-[hsl(var(--accent-electric))]" />
-                ))}
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl border border-ink-700 bg-gradient-to-br from-ink-800 to-ink-900 text-[hsl(var(--accent-electric))] transition group-hover:scale-110 group-hover:border-[hsl(var(--accent-electric)/0.4)]">
+                {item.icon}
               </div>
-              <p className="flex-1 text-sm leading-relaxed text-ink-300">"{r.text}"</p>
-              <div className="mt-6 flex items-center gap-3 border-t border-ink-800 pt-4">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-ink-700 to-ink-800 font-display text-sm font-bold text-[hsl(var(--accent-electric))]">
-                  {r.name.charAt(0)}
-                </div>
-                <div>
-                  <div className="text-sm font-medium text-ink-100">{r.name}</div>
-                  <div className="text-xs text-ink-500">{r.area}, OH</div>
-                </div>
-              </div>
+              <h3 className="mb-2 font-display text-lg font-bold text-ink-50">{item.title}</h3>
+              <p className="text-sm leading-relaxed text-ink-400">{item.desc}</p>
+              <div className="absolute inset-x-0 bottom-0 h-px origin-left scale-x-0 bg-gradient-to-r from-[hsl(var(--accent-electric))] to-[hsl(var(--accent-cyan))] transition-transform duration-500 group-hover:scale-x-100" />
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-12 text-center"
+        >
+          <a
+            href={buildWhatsAppUrl('general')}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2 rounded-full border border-ink-700 px-6 py-3 text-sm text-ink-200 transition hover:border-[hsl(var(--accent-electric)/0.4)] hover:text-ink-50"
+          >
+            Connect with us on WhatsApp
+            <span aria-hidden className="transition group-hover:translate-x-1">→</span>
+          </a>
+        </motion.div>
       </div>
     </section>
   );

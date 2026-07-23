@@ -40,8 +40,8 @@ export function Financing() {
               viewport={{ once: true }}
               className="mt-6 max-w-md text-base leading-relaxed text-ink-400"
             >
-              We offer financing with approved credit so you can get the precision
-              HVAC system your home deserves — with payment options that fit your budget.
+              We offer financing with approved credit. Payment options that
+              fit your budget so you can get the HVAC system your home needs.
             </motion.p>
 
             <motion.a

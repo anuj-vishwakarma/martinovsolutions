@@ -8,6 +8,7 @@ import { COMPANY, buildWhatsAppUrl, buildTelUrl } from '@/lib/whatsapp';
 const navLinks = [
   { label: 'Home', href: '#hero' },
   { label: 'Reviews', href: '#reviews' },
+  { label: 'Videos', href: '#videos' },
   { label: 'Products', href: '#products' },
   { label: 'Services', href: '#services' },
   { label: 'Financing', href: '#financing' },

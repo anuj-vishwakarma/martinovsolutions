@@ -8,28 +8,28 @@ const services = [
   {
     icon: <Wrench className="h-7 w-7" />,
     title: 'Installation',
-    desc: 'Precision installation of new HVAC systems, engineered for your home and built to perform for years.',
+    desc: 'We provide installation in Cuyahoga Falls, OH and the surrounding areas.',
     intent: 'new-system' as const,
     tag: 'New Systems',
   },
   {
     icon: <ShieldCheck className="h-7 w-7" />,
     title: 'Repair',
-    desc: 'Fast, reliable repair service for all major brands. Our certified technicians diagnose and fix it right the first time.',
+    desc: 'We provide repair service in Cuyahoga Falls, OH and the surrounding areas.',
     intent: 'repair' as const,
     tag: 'Service Calls',
   },
   {
     icon: <Layers className="h-7 w-7" />,
     title: 'Maintenance',
-    desc: 'Scheduled maintenance that keeps your system efficient, extends its lifespan, and prevents costly breakdowns.',
+    desc: 'We provide maintenance in Cuyahoga Falls, OH and the surrounding areas.',
     intent: 'maintenance' as const,
     tag: 'Preventative',
   },
   {
     icon: <Factory className="h-7 w-7" />,
     title: 'Sheet Metal Fabrication',
-    desc: 'Master craftsmen build a full range of HVAC applications in the company\'s own shop for higher quality and faster installation.',
+    desc: 'Master craftsmen build a full range of HVAC applications in the company\'s own shop.',
     intent: 'product-knowledge' as const,
     tag: 'In-House Shop',
   },
@@ -71,7 +71,7 @@ export function Services() {
             className="max-w-md text-sm leading-relaxed text-ink-400"
           >
             We provide installation, repair, and maintenance in Cuyahoga Falls, OH
-            and the surrounding areas — backed by in-house fabrication and master craftsmanship.
+            and the surrounding areas.
           </motion.p>
         </div>
 
