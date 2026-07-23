@@ -1,0 +1,273 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 40% 5%;
+    --foreground: 210 20% 96%;
+    --card: 218 30% 9%;
+    --card-foreground: 210 20% 96%;
+    --popover: 218 30% 9%;
+    --popover-foreground: 210 20% 96%;
+    --primary: 210 20% 96%;
+    --primary-foreground: 220 40% 5%;
+    --secondary: 216 22% 20%;
+    --secondary-foreground: 210 20% 96%;
+    --muted: 216 22% 20%;
+    --muted-foreground: 215 14% 64%;
+    --accent: 216 22% 20%;
+    --accent-foreground: 210 20% 96%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 96%;
+    --border: 216 22% 20%;
+    --input: 216 22% 20%;
+    --ring: 199 89% 52%;
+    --radius: 0.5rem;
+    --chart-1: 199 89% 52%;
+    --chart-2: 175 70% 45%;
+    --chart-3: 25 95% 55%;
+    --chart-4: 210 20% 78%;
+    --chart-5: 215 14% 50%;
+
+    /* Industrial accent palette */
+    --accent-electric: 199 95% 55%;
+    --accent-cyan: 175 80% 48%;
+    --accent-orange: 25 95% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'cv11', 'ss01';
+    font-variation-settings: 'opsz' 32;
+  }
+
+  ::selection {
+    background-color: hsl(var(--accent-electric) / 0.3);
+    color: hsl(var(--ink-50));
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display), 'Space Grotesk', sans-serif;
+  }
+  .font-body {
+    font-family: var(--font-body), 'Inter', sans-serif;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .grain {
+    position: relative;
+  }
+  .grain::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' /%3E%3C/svg%3E");
+  }
+
+  .blueprint-grid {
+    background-image:
+      linear-gradient(hsl(var(--ink-700) / 0.4) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--ink-700) / 0.4) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .blueprint-grid-fine {
+    background-image:
+      linear-gradient(hsl(var(--ink-700) / 0.25) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--ink-700) / 0.25) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .metal-sheen {
+    background: linear-gradient(
+      110deg,
+      transparent 30%,
+      hsl(var(--ink-300) / 0.15) 45%,
+      hsl(var(--ink-100) / 0.25) 50%,
+      hsl(var(--ink-300) / 0.15) 55%,
+      transparent 70%
+    );
+    background-size: 200% 100%;
+    background-position: 200% 0;
+  }
+
+  .glass-panel {
+    background: hsl(var(--ink-900) / 0.6);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    border: 1px solid hsl(var(--ink-700) / 0.6);
+  }
+
+  .glass-panel-light {
+    background: hsl(var(--ink-800) / 0.4);
+    backdrop-filter: blur(12px) saturate(120%);
+    -webkit-backdrop-filter: blur(12px) saturate(120%);
+    border: 1px solid hsl(var(--ink-600) / 0.4);
+  }
+
+  .text-gradient-steel {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--ink-50)) 0%,
+      hsl(var(--ink-300)) 40%,
+      hsl(var(--ink-400)) 60%,
+      hsl(var(--ink-100)) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .text-gradient-electric {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--accent-electric)) 0%,
+      hsl(var(--accent-cyan)) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .glow-electric {
+    box-shadow:
+      0 0 20px hsl(var(--accent-electric) / 0.25),
+      0 0 60px hsl(var(--accent-electric) / 0.1);
+  }
+
+  .glow-cyan {
+    box-shadow:
+      0 0 20px hsl(var(--accent-cyan) / 0.2),
+      0 0 60px hsl(var(--accent-cyan) / 0.08);
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+}
+
+@keyframes scan {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes drift {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(20px, -20px);
+  }
+}
+
+@keyframes airflow {
+  0% {
+    stroke-dashoffset: 100;
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.6;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float-y {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.animate-scan {
+  animation: scan 6s linear infinite;
+}
+.animate-drift {
+  animation: drift 12s ease-in-out infinite;
+}
+.animate-shimmer {
+  animation: shimmer 3s linear infinite;
+}
+.animate-spin-slow {
+  animation: spin-slow 40s linear infinite;
+}
+.animate-float-y {
+  animation: float-y 6s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--ink-950));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--ink-700));
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--ink-600));
+}
